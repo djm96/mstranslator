@@ -169,7 +169,7 @@ class Translator(object):
         return result
 
     def add_translation(self, text_orig, text_trans, lang_from, lang_to, user, rating=1,
-                        contenttype='text/plain', category='general', url=None):
+                        contenttype='text/plain', category='generalnn', url=None):
         if len(text_orig) > 1000:
             raise ValueError('The original text maximum length is 1000 characters')
         if len(text_trans) > 2000:
