@@ -107,7 +107,7 @@ class Translator(object):
         return self.make_request(action, params)
 
     def translate(self, text, lang_from=None, lang_to=None,
-                  contenttype='text/plain', category='general'):
+                  contenttype='text/plain', category='generalnn'):
         params = {
             'text': text,
         }
@@ -115,7 +115,7 @@ class Translator(object):
                                contenttype, category)
 
     def translate_array(self, texts=[], lang_from=None, lang_to=None,
-                        contenttype='text/plain', category='general'):
+                        contenttype='text/plain', category='generalnn'):
         params = {
             'texts': json.dumps(texts),
         }
@@ -123,14 +123,14 @@ class Translator(object):
                                contenttype, category)
 
     def translate_array2(self, texts=[], lang_from=None, lang_to=None,
-                        contenttype='text/plain', category='general'):
+                        contenttype='text/plain', category='generalnn'):
         params = {
             'texts': json.dumps(texts),
         }
         return self._translate('TranslateArray2', params, lang_from, lang_to,
                                contenttype, category)
 
-    def get_translations(self, text, lang_from, lang_to, max_n=10, contenttype='text/plain', category='general',
+    def get_translations(self, text, lang_from, lang_to, max_n=10, contenttype='text/plain', category='generalnn',
                          url=None, user=None, state=None):
         options = {
             'Category': category,
@@ -169,7 +169,7 @@ class Translator(object):
         return result
 
     def add_translation(self, text_orig, text_trans, lang_from, lang_to, user, rating=1,
-                        contenttype='text/plain', category='general', url=None):
+                        contenttype='text/plain', category='generalnn', url=None):
         if len(text_orig) > 1000:
             raise ValueError('The original text maximum length is 1000 characters')
         if len(text_trans) > 2000:
